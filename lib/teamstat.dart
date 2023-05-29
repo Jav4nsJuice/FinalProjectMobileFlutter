@@ -6,11 +6,11 @@ Widget teamStat(String team, String logoUrl, String teamName) {
       children: [
         Text(
           team,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18.0,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10.0,
         ),
         Expanded(
@@ -19,13 +19,13 @@ Widget teamStat(String team, String logoUrl, String teamName) {
             width: 54.0,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10.0,
         ),
         Text(
           teamName,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18.0,
           ),
         ),

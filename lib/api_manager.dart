@@ -14,12 +14,12 @@ class SoccerApi {
   Future<List<SoccerMatch>> getAllMatches() async {
     Response res = await get(Uri.parse(apiUrl), headers: headers);
     var body;
-    var res1;
+    List<SoccerMatch> res1 = [];
 
     if (res.statusCode == 200) {
       body = jsonDecode(res.body);
       List<dynamic> matchesList = body['response'];
-      print("Api service: ${body}");
+      print("Api service: $body");
       List<SoccerMatch> matches = matchesList
           .map((dynamic item) => SoccerMatch.fromJson(item))
           .toList();

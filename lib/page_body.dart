@@ -12,11 +12,12 @@ Widget PageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
         flex: 2,
         child: Container(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 24.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: 
+              [
                 teamStat("Local Team", allmatches[0].home.logoUrl,
                     allmatches[0].home.name),
                 goalStat(allmatches[0].fixture.status.elapsedTime,
@@ -34,18 +35,18 @@ Widget PageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
           width: double.infinity,
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(40.0),
               topRight: Radius.circular(40.0),
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "MATCHES",
                   style: TextStyle(
                     color: Colors.white,

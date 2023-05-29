@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ItemPage extends StatefulWidget {
   final Function(Color)? onColorSelected;
 
-  ItemPage({required this.onColorSelected});
+  const ItemPage({super.key, required this.onColorSelected});
   @override
   _ItemPageState createState() => _ItemPageState();
 }
@@ -24,11 +24,11 @@ class _ItemPageState extends State<ItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select a Color'),
+        title: const Text('Select a Color'),
         backgroundColor: selectedColor,
       ),
       body: Container(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -37,31 +37,31 @@ class _ItemPageState extends State<ItemPage> {
               isSelected: selectedColor == Colors.red,
               onTap: () => selectColor(Colors.red),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ColorBox(
               color: Colors.green,
               isSelected: selectedColor == Colors.green,
               onTap: () => selectColor(Colors.green),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ColorBox(
               color: Colors.grey,
               isSelected: selectedColor == Colors.grey,
               onTap: () => selectColor(Colors.grey),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ColorBox(
               color: Colors.blue,
               isSelected: selectedColor == Colors.blue,
               onTap: () => selectColor(Colors.blue),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ColorBox(
               color: Colors.deepPurple,
               isSelected: selectedColor == Colors.deepPurple,
               onTap: () => selectColor(Colors.deepPurple),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ColorBox(
               color: Colors.black,
               isSelected: selectedColor == Colors.black,
@@ -79,7 +79,7 @@ class ColorBox extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
 
-  const ColorBox({
+  const ColorBox({super.key, 
     required this.color,
     required this.isSelected,
     required this.onTap,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_mobile_final/goalstat.dart';
+import 'package:flutter_app_mobile_final/teamstat.dart';
 import 'soccermodel.dart';
 
-Widget matchTile(SoccerMatch match) {
+Widget matchTileLib(SoccerMatch match) {
   var homeGoal = match.goal.home;
   var awayGoal = match.goal.away;
   homeGoal ??= 0;
@@ -18,7 +20,7 @@ Widget matchTile(SoccerMatch match) {
             match.home.name,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 16.0,
             ),
           ),
@@ -32,7 +34,7 @@ Widget matchTile(SoccerMatch match) {
             "$homeGoal - $awayGoal",
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 16.0,
             ),
           ),
@@ -46,7 +48,7 @@ Widget matchTile(SoccerMatch match) {
             match.away.name,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 16.0,
             ),
           ),
@@ -55,3 +57,4 @@ Widget matchTile(SoccerMatch match) {
     ),
   );
 }
+

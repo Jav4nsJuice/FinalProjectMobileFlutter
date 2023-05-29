@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_mobile_final/api_manager.dart';
+import 'package:flutter_app_mobile_final/libertadores_page.dart';
 import 'package:flutter_app_mobile_final/page_body.dart';
 
 import 'item_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 enum MenuItem {
@@ -16,10 +17,12 @@ enum MenuItem {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SoccerApp(),
     );
@@ -27,6 +30,8 @@ class MyApp extends StatelessWidget {
 }
 
 class SoccerApp extends StatefulWidget {
+  const SoccerApp({super.key});
+
   @override
   _SoccerAppState createState() => _SoccerAppState();
 }
@@ -43,13 +48,13 @@ class _SoccerAppState extends State<SoccerApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         backgroundColor: selectedColor,
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           "SOCCERBOARD",
-          style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
         centerTitle: true,
         actions: [
@@ -69,15 +74,15 @@ class _SoccerAppState extends State<SoccerApp> {
             itemBuilder: (context) => const [
               PopupMenuItem<MenuItem>(
                 value: MenuItem.item1,
-                child: Text('Item 1'),
+                child: Text('Home'),
               ),
               PopupMenuItem(
                 value: MenuItem.item2,
-                child: Text('Item 2'),
+                child: Text('Libertadores'),
               ),
               PopupMenuItem(
                 value: MenuItem.item3,
-                child: Text('Item 3'),
+                child: Text('Liga Profesional'),
               ),
               PopupMenuItem(
                 value: MenuItem.item4,
@@ -93,9 +98,9 @@ class _SoccerAppState extends State<SoccerApp> {
           if (snapshot.hasData) {
             print("Punto antes del error.");
             print(snapshot.data?.length);
-            return PageBody(snapshot.data!, selectedColor ?? Colors.blue);
+            return LiberPageBody(snapshot.data!, selectedColor ?? Colors.blue);
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
