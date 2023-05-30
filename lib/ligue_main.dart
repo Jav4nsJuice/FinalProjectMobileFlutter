@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_mobile_final/api_manager.dart';
 import 'package:flutter_app_mobile_final/libertadores_page.dart';
-import 'package:flutter_app_mobile_final/ligue_main.dart';
+import 'package:flutter_app_mobile_final/main.dart';
 import 'package:flutter_app_mobile_final/page_body.dart';
 
 import 'item_page.dart';
-
-void main() {
-  runApp(const MyApp());
-}
 
 enum MenuItem {
   item1,
@@ -17,8 +13,8 @@ enum MenuItem {
   item4,
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAppLigue extends StatelessWidget {
+  const MyAppLigue({super.key});
 
   // This widget is the root of your application.
   @override
@@ -48,15 +44,15 @@ class _SoccerAppState extends State<SoccerApp> {
 
   @override
   Widget build(BuildContext context) {
-    String option = "Libertadores";
-
+    String option = "Liga Profesional";
+    
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         backgroundColor: selectedColor,
         elevation: 0.0,
         title: const Text(
-          "SOCCERBOARD LIB",
+          "SOCCERBOARD LIG",
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
         centerTitle: true,
@@ -65,11 +61,11 @@ class _SoccerAppState extends State<SoccerApp> {
             onSelected: (value) {
               if (value == MenuItem.item1) {
               } else if (value == MenuItem.item2) {
-              } else if (value == MenuItem.item3) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyAppLigue()),
+                  MaterialPageRoute(builder: (context) => MyApp()),
                 );
+              } else if (value == MenuItem.item3) {
               } else if (value == MenuItem.item4) {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => ItemPage(
