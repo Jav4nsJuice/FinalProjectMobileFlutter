@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "838081756338",
+    "project_id": "flutter-notif-eb0e4",
+    "storage_bucket": "flutter-notif-eb0e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838081756338:android:f65cf5e77b2d4476775dab",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app_mobile_final"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh7R-Efb4rjyFZVbPjm81k2jVlUdJMI2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
