@@ -8,19 +8,20 @@ import 'soccermodel.dart';
 
 Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
   DateTime now = DateTime.now();
-  
+
   List<SoccerMatch> pastMatches = [];
   List<SoccerMatch> todayMatches = [];
   List<SoccerMatch> futureMatches = [];
   List<SoccerMatch> matchesOrdened = [];
 
   for (int i = 0; i < allmatches.length; i++) {
-    DateTime fecha = DateFormat("yyyy-MM-dd'T'HH:mm:ssZ").parse(allmatches[i].fixture.date);
-    if(fecha.isBefore(now)){
+    DateTime fecha =
+        DateFormat("yyyy-MM-dd'T'HH:mm:ssZ").parse(allmatches[i].fixture.date);
+    if (fecha.isBefore(now)) {
       pastMatches.add(allmatches[i]);
-    }else if(fecha.isAfter(now)){
+    } else if (fecha.isAfter(now)) {
       futureMatches.add(allmatches[i]);
-    }else{
+    } else {
       todayMatches.add(allmatches[i]);
     }
   }
@@ -28,8 +29,7 @@ Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
   matchesOrdened.addAll(todayMatches);
   matchesOrdened.addAll(futureMatches);
   matchesOrdened.addAll(pastMatches);
-  
-  
+
   return Column(
     children: [
       Expanded(
@@ -50,6 +50,7 @@ Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
                   ),
                 ),
                 const Expanded(
+                  flex: 0,
                   child: Text(
                     "Today Matches",
                     textAlign: TextAlign.center,
@@ -68,6 +69,7 @@ Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
                   ),
                 ),
                 const Expanded(
+                  flex: 0,
                   child: Text(
                     "Future Matches",
                     textAlign: TextAlign.center,
@@ -86,6 +88,7 @@ Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
                   ),
                 ),
                 const Expanded(
+                  flex: 0,
                   child: Text(
                     "Past Matches",
                     textAlign: TextAlign.center,
@@ -108,7 +111,6 @@ Widget LiberPageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
           ),
         ),
       ),
-    
     ],
   );
 }

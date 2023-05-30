@@ -4,8 +4,10 @@ import 'package:flutter_app_mobile_final/soccermodel.dart';
 import 'package:http/http.dart';
 
 class SoccerApi {
-  final String apiUrlLibertadores = "https://v3.football.api-sports.io/fixtures?league=13&&season=2023";
-  final String apiUrlLigaProfesional = "https://v3.football.api-sports.io/fixtures?league=964&&season=2023";
+  final String apiUrlLibertadores =
+      "https://v3.football.api-sports.io/fixtures?league=13&&season=2023";
+  final String apiUrlLigaProfesional =
+      "https://v3.football.api-sports.io/fixtures?league=128&&season=2023";
   static const headers = {
     'x-rapidapi-host': "v3.football.api-sports.io",
     'x-rapidapi-key': "8958cddecc779ef9848f8e2edbd1c2d0"
@@ -13,8 +15,8 @@ class SoccerApi {
 
   Future<List<SoccerMatch>> getAllMatches(String opcion) async {
     String apiurl = apiUrlLibertadores;
-    
-    if(opcion == "Liga Profesional") {
+
+    if (opcion == "Liga Profesional") {
       apiurl = apiUrlLigaProfesional;
     }
 
