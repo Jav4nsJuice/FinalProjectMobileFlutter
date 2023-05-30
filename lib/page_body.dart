@@ -16,8 +16,7 @@ Widget PageBody(List<SoccerMatch> allmatches, Color? backgroundColor) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: 
-              [
+              children: [
                 teamStat("Local Team", allmatches[0].home.logoUrl,
                     allmatches[0].home.name),
                 goalStat(allmatches[0].fixture.status.elapsedTime,

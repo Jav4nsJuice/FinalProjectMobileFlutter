@@ -4,6 +4,7 @@ import 'package:flutter_app_mobile_final/teamstat.dart';
 import 'soccermodel.dart';
 
 Widget matchTileLib(SoccerMatch match) {
+
   var homeGoal = match.goal.home;
   var awayGoal = match.goal.away;
   homeGoal ??= 0;
@@ -21,13 +22,13 @@ Widget matchTileLib(SoccerMatch match) {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 16.0,
+              fontSize: 18.0,
             ),
           ),
         ),
         Image.network(
           match.home.logoUrl,
-          width: 36.0,
+          width: 54.0,
         ),
         Expanded(
           child: Text(
@@ -35,13 +36,13 @@ Widget matchTileLib(SoccerMatch match) {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 16.0,
+              fontSize: 20.0,
             ),
           ),
         ),
         Image.network(
           match.away.logoUrl,
-          width: 36.0,
+          width: 54.0,
         ),
         Expanded(
           child: Text(
@@ -49,7 +50,7 @@ Widget matchTileLib(SoccerMatch match) {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 16.0,
+              fontSize: 18.0,
             ),
           ),
         ),
